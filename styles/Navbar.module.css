@@ -1,0 +1,17 @@
+.navbar {
+    margin: 10px auto 80px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border-bottom: 1px solid #ddd;
+  }
+  .navbar a {
+    margin-left: 12px;
+    font-size: 1.4em;
+    padding-left: 20px;
+  }
+  .navbar a:hover{
+    border-bottom: 2px;
+    text-decoration: underline 2px #4979ff;
+  }
