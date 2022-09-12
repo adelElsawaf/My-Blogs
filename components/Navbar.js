@@ -6,6 +6,8 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <Link href="/posts"><a>Posts</a></Link>
       <Link href="/albums"><a>Albums</a></Link>
+      <Link href="/users"><a>Users</a></Link>
+
     </nav>
 );
 }

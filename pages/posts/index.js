@@ -18,13 +18,13 @@ const Posts = ({ posts }) => {
 
 
   return (
-    <div>
+    <div className="content" >
       <h1>All Posts</h1>
       {posts.map(post => (
         <div className={styles.single}>
           <h3>{post.title}</h3>
           <p>{post.body}</p>
-          <a className={styles.btn} href={'/posts/' + post.id} key={post.id}>view post</a>
+          <a className='btn' href={'/posts/' + post.id}>View Post</a>
         </div>))}
     </div>
   );

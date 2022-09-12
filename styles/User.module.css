@@ -1,0 +1,32 @@
+.contactInfo{
+    display:flex;
+    align-items: center;
+}
+.sectionTitle{
+    font-size: 2vw;
+    font-weight: 700;
+}
+.username{
+    font-size: 3vw;
+    align-items: center;
+    text-align: center;
+}
+.Contacts div{
+    background-color: rgb(239, 236, 236);
+}
+.sideContent{
+    padding: 2px 16px;
+    background: #fff;
+    display: block;
+    margin: 20px 10px;
+    border-left: 8px solid #fff;
+    width: 25%;
+    margin-right: 7%;
+    border-radius: 16px;
+}
+.Content{
+    display: flex;
+}
+.mainContent{
+    max-width: 960px;
+}
