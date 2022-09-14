@@ -36,7 +36,6 @@ const Details = ({ post, comments }) => {
         <div className={styles.content}>
             <h1>Post</h1>
             <hr />
-          
             <h3>{post.title}</h3>
             <h2>{post.body}</h2>
             <h1>Comments</h1>

@@ -37,36 +37,40 @@ const Details = ({ user, posts }) => {
             <h1 className={userStyles.username}>{user.name}</h1>
             <div className={userStyles.Content}>
                 <div className={userStyles.sideContent}>
-                    <details className={userStyles.Contacts}>
-                        <summary className={userStyles.sectionTitle}>Contact Info</summary>
-                        <div>
-                            <h3 className={userStyles.contactInfo}><Image src='/username-logo.png' width={40} height={40}></Image>{user.username}</h3>
-                            <h3 className={userStyles.contactInfo}> <Image src='/email-logo.jpg' width={40} height={40}></Image> {user.email}</h3>
-                            <h3 className={userStyles.contactInfo}> <Image src='/phone-logo.jpg' width={40} height={40}></Image>{user.phone}</h3>
-                            <h3 className={userStyles.contactInfo}> <Image src='/website-logo.png' width={40} height={40}></Image>{user.website}</h3>
-                        </div>
-                    </details>
+                    <div className={userStyles.Contacts}>
+                        <h1 className={userStyles.sectionTitle}>Contact Info</h1>
+                        <section>
+                            <h3 className={userStyles.dataInfo}><Image src='/username-logo.png' width={35} height={35}></Image>{user.username}</h3>
+                            <h3 className={userStyles.dataInfo}> <Image src='/email-logo.jpg' width={35} height={35}></Image> {user.email}</h3>
+                            <h3 className={userStyles.dataInfo}> <Image src='/phone-logo.jpg' width={35} height={35}></Image>{user.phone}</h3>
+                            <h3 className={userStyles.dataInfo} > <Image src='/website-logo.png' width={35} height={35}></Image>{user.website}</h3>
+                            </section>
+                    </div>
                     <hr />
-                    <h3 className={userStyles.contactInfo}><Image src='/address-logo.png' width={40} height={40}></Image>{user.address.street}
-                        , {user.address.suite} , {user.address.city}</h3>
-                    <h3 className={userStyles.contactInfo} ><Image src='/geography-logo.jpg' width={40} height={40}></Image> {user.address.geo.lat}  ,
-                        {user.address.geo.lng}</h3>
+                    <section>
+                        <h1 className={userStyles.sectionTitle}>Address Info</h1>
+                        <h3 className={userStyles.dataInfo}><Image src='/address-logo.png' width={35} height={35}></Image>{user.address.street}
+                            , {user.address.suite} , {user.address.city}</h3>
+                        <h3 className={userStyles.dataInfo} ><Image src='/geography-logo.jpg' width={35} height={35}></Image> {user.address.geo.lat}  ,
+                            {user.address.geo.lng}</h3>
+                    </section>
                     <hr />
-                    <details className={userStyles.Contacts}>
-                        <summary className={userStyles.sectionTitle}>Work  <Image src='/work-logo.jpg' width={40} height={40}></Image> </summary>
+                    <section>
+                        <h1 className={userStyles.sectionTitle}> Work</h1>
                         <div>
-
-                            <h3 className={userStyles.contactInfo}> Works at {user.company.name} </h3>
-                            <h3 className={userStyles.contactInfo}> Catch Phrase is  {user.company.catchPhrase}</h3>
-                            <h3 className={userStyles.contactInfo}> Bs is {user.company.bs}</h3>
+                            <h3 className={userStyles.dataInfo}> Works at {user.company.name} </h3>
+                            <h3 className={userStyles.dataInfo}> Catch Phrase is  {user.company.catchPhrase}</h3>
+                            <h3 className={userStyles.dataInfo}> Bs is {user.company.bs}</h3>
                         </div>
-                    </details>
+                    </section>
 
                 </div>
+
                 <div className={userStyles.mainContent}>
-                    <h1>All Posts</h1>
+                <h1>Posts</h1>
                     {posts.map(post => (
-                        <div className={postsStyles.single}>
+                        <div className='single'>
+                            <h1>{user.email}</h1>
                             <h3>{post.title}</h3>
                             <p>{post.body}</p>
                             <a className='btn' href={'/posts/' + post.id}>View Post</a>

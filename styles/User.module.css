@@ -1,6 +1,8 @@
-.contactInfo{
+.dataInfo{
     display:flex;
     align-items: center;
+    font-size : 1vw ;
+    font-weight: bold;
 }
 .sectionTitle{
     font-size: 2vw;
@@ -23,6 +25,9 @@
     width: 25%;
     margin-right: 7%;
     border-radius: 16px;
+}
+.sideContent span{
+    margin-right: 10px !important;
 }
 .Content{
     display: flex;

@@ -4,10 +4,8 @@ import styles from '../styles/Navbar.module.css';
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
+    <Link href="/users"><a>Users</a></Link> 
       <Link href="/posts"><a>Posts</a></Link>
-      <Link href="/albums"><a>Albums</a></Link>
-      <Link href="/users"><a>Users</a></Link>
-
     </nav>
 );
 }
