@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import userStyles from '../../styles/User.module.css';
-import postsStyles from '../../styles/Posts.module.css'
+import userStyles from '../../../styles/User.module.css';
 export const getStaticPaths = async () => {
     const usersFetch = await fetch('https://jsonplaceholder.typicode.com/users');
     const usersData = await usersFetch.json();
@@ -34,7 +33,6 @@ export const getStaticProps = async (context) => {
 const Details = ({ user, posts }) => {
     return (
         <div>
-            <h1 className={userStyles.username}>{user.name}</h1>
             <div className={userStyles.Content}>
                 <div className={userStyles.sideContent}>
                     <div className={userStyles.Contacts}>
@@ -67,6 +65,10 @@ const Details = ({ user, posts }) => {
                 </div>
 
                 <div className={userStyles.mainContent}>
+                <div className={userStyles.Title}>
+                <h1 className={userStyles.username}>{user.name}</h1>
+                <a className='btn' href={`${user.id}/todos`} >View To Do List</a>
+                </div>
                 <h1>Posts</h1>
                     {posts.map(post => (
                         <div className='single'>

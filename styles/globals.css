@@ -15,7 +15,8 @@ a {
 }
 .btn {
   display: block;
-  width: 150px;
+  width: 200px;
+  height: 30px;
   padding: 8px 0;
   margin: 20px auto;
   background: #4979ff;
@@ -35,5 +36,10 @@ a {
 .single:hover {
   border-left: 8px solid #4979ff;
 }
-
+.checked{
+  text-decoration:line-through ;
+}
+li{
+  
+}
 
