@@ -1,5 +1,4 @@
 import styles from '../../styles/Post.module.css'
-import Comments from '../../components/Comments';
 export const getStaticPaths = async () => {
     const postsFetch = await fetch('https://jsonplaceholder.typicode.com/posts');
     const postsData = await postsFetch.json();
@@ -41,7 +40,15 @@ const Details = ({ post, comments }) => {
             <h2>{post.body}</h2>
             <h1>Comments</h1>
             <hr />
-            <Comments postId={post.id}></Comments>
+            {comments.map(comment => (
+                <div>
+                <h3>{comment.email}</h3>
+                <div className={styles.comment}> 
+                    <h2>{comment.name}</h2>
+                    <h2>{comment.body}</h2>
+                    </div>
+                    <hr/>
+                </div>))}
         </div>
 
     );

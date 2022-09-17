@@ -1,6 +1,5 @@
-import Link from 'next/link'
-import styles from '../../styles/Posts.module.css';
-
+import Posts from "../../components/Posts";
+import Comments from "../../components/Comments";
 export const getStaticProps = async () => {
   const result = await fetch('https://jsonplaceholder.typicode.com/posts');
   const data = await result.json();
@@ -8,27 +7,15 @@ export const getStaticProps = async () => {
 
 
   return {
-    props: { posts: data }
+    props: { posts: data }  
 
   }
 }
-
-
-const Posts = ({ posts }) => {
-
-
+const Post = ({posts}) => {
   return (
-    <div className="content" >
-      <h1>All Posts</h1>
-      
-      {posts.map(post => (
-      <div className="single">
-        <h3>{post.title}</h3>
-          <p>{post.body}</p>
-          <a className='btn' href={'/posts/' + post.id}>View Post</a>
-        </div>))}
+    <div> <Posts posts={posts}></Posts>
     </div>
-  );
+   );
 }
-
-export default Posts;
+ 
+export default Post;

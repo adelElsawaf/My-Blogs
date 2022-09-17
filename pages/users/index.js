@@ -16,7 +16,11 @@ const Users = ({users}) => {
               <h1 className={styles.username}>{user.username}</h1>
               <h5 className={styles.work}>Works at {user.company.name}</h5>
               <h2>{user.email}</h2>
-              <a  className = "btn" href={'/users/' + user.id}>View User</a>
+              <div className={styles.navigateButtons}>
+              <a  className = "btn" href={'/users/' + user.id}>View Profile</a>
+              <a  className = "btn" href={'/users/' + user.id+"/todos"}>To Do List</a>
+              <a  className = "btn" href={'/users/' + user.id+"/albums"}>Albums</a>
+              </div>
             </div>))}
         </div>
 

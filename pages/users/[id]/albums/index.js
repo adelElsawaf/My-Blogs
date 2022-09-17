@@ -1,3 +1,4 @@
+
 export const getStaticPaths = async () => {
     const usersFetch = await fetch('https://jsonplaceholder.typicode.com/users');
     const usersData = await usersFetch.json();
@@ -18,25 +19,25 @@ export const getStaticPaths = async () => {
 }
 export const getStaticProps = async (context) => {
     const id = context.params.id;
-    const toDosFetch = await fetch(`https://jsonplaceholder.typicode.com/users/${id}/todos`);
-    const toDosData = await toDosFetch.json();
+    const albumsFetch = await fetch(`https://jsonplaceholder.typicode.com/users/${id}/albums`);
+    const albumsData = await albumsFetch.json();
     return {
-        props: { toDoList: toDosData }
+        props: { albumsList: albumsData }
     }
 }
-const handleFinishedItems = (toDoItem) => {
-    if (toDoItem.completed == true)
-        return ("checked")
-}
-const Todos = ({ toDoList }) => {
+
+
+const Albums = ({ albumsList }) => {
     return (
         <div className="content">
-            {toDoList.map(toDoItem => (
-                <div key={toDoItem.id} className='single'>
-                <h2>{toDoItem.id}</h2>
-                <h2 className={handleFinishedItems(toDoItem)}>{toDoItem.title}</h2>
+            <h1> Albums</h1>
+            {albumsList.map(album => (
+                <div key={album.id} className='single'>
+                    <h2>{album.id}</h2>
+                    <h2>{album.title}</h2>
+                    <a className="btn" href={'/ablums/' + album.id }>View Photos</a>
                 </div>))}
         </div>);
 }
 
-export default Todos;
+export default Albums;

@@ -76,6 +76,7 @@ const Details = ({ user, posts }) => {
                             <h3>{post.title}</h3>
                             <p>{post.body}</p>
                             <a className='btn' href={'/posts/' + post.id}>View Post</a>
+
                         </div>))}
                 </div>;
             </div>
