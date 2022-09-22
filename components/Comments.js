@@ -6,7 +6,7 @@ const Comments = ({ postId }) => {
             {isPending && <div>Loading...</div>}
             {error && <div>{error}</div>}
             {comments.map(comment => (
-                <div className="single">
+                <div key={comment.id} className="single">
                 <h2>{comment.email}</h2>
                 <h1>{comment.name}</h1>
                 <h3>{comment.body}</h3>

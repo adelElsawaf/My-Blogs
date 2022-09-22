@@ -12,7 +12,7 @@ const Users = ({users}) => {
         <div  className="content" >
         <h1>All Users</h1>
         {users.map(user => (
-            <div className="single">
+            <div key={user.id}className="single">
               <h1 className={styles.username}>{user.username}</h1>
               <h5 className={styles.work}>Works at {user.company.name}</h5>
               <h2>{user.email}</h2>
