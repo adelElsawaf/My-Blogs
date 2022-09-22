@@ -38,6 +38,7 @@ const Todos = ({ toDoList }) => {
                 {postNumber+=1}
                 <h2 className={handleFinishedItems(toDoItem)}>{toDoItem.title}</h2>
                 </div>))}
+                {postNumber=0 }
         </div>);
 }
 
