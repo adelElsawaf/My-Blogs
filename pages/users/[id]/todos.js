@@ -34,11 +34,9 @@ const Todos = ({ toDoList }) => {
         <div className="content">
             {toDoList.map(toDoItem => (
                 <div key={toDoItem.id} className='single'>
-                <h2>{postNumber}</h2>
-                {postNumber+=1}
+                <h2>{postNumber++}</h2>
                 <h2 className={handleFinishedItems(toDoItem)}>{toDoItem.title}</h2>
                 </div>))}
-                {postNumber=0 }
         </div>);
 }
 
