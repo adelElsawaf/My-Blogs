@@ -29,11 +29,13 @@ const handleFinishedItems = (toDoItem) => {
         return ("checked")
 }
 const Todos = ({ toDoList }) => {
+    var postNumber = 1;
     return (
         <div className="content">
             {toDoList.map(toDoItem => (
                 <div key={toDoItem.id} className='single'>
-                <h2>{toDoItem.id}</h2>
+                <h2>{postNumber}</h2>
+                {postNumber+=1}
                 <h2 className={handleFinishedItems(toDoItem)}>{toDoItem.title}</h2>
                 </div>))}
         </div>);
