@@ -1,5 +1,7 @@
-import styles from '../../styles/Post.module.css'
 import Comments from '../../components/Comments';
+import EachPost from '../../components/posts/EachPost'
+import useFetch from '../../useFetch';
+
 export const getStaticPaths = async () => {
     const postsFetch = await fetch('https://jsonplaceholder.typicode.com/posts');
     const postsData = await postsFetch.json();
@@ -22,25 +24,21 @@ export const getStaticProps = async (context) => {
     const id = context.params.id;
     const postsFetch = await fetch('https://jsonplaceholder.typicode.com/posts/' + id);
     const postsData = await postsFetch.json();
-    const commentFetch = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
-    const commentData = await commentFetch.json();
 
     return {
         props: {
-            comments: commentData
-            , post: postsData
+            post: postsData
         }
     }
 }
-const Details = ({ post, comments }) => {
+
+const Details = ({ post }) => {
+    const postOwner = useFetch("https://jsonplaceholder.typicode.com/users/" +post.userId).data;
     return (
-        <div className={styles.content}>
-            <h1>Post</h1>
+        <div className='content'>
             <hr />
-            <h3>{post.title}</h3>
-            <h2>{post.body}</h2>
+            <EachPost post={post} postOwner={postOwner}></EachPost>
             <h1>Comments</h1>
-            <hr />
             <Comments postId={post.id}></Comments>
         </div>
 

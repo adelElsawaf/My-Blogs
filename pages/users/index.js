@@ -19,7 +19,6 @@ const Users = ({users}) => {
               <div className={styles.navigateButtons}>
               <a  className = "btn" href={'/users/' + user.id}>View Profile</a>
               <a  className = "btn" href={'/users/' + user.id+"/todos"}>To Do List</a>
-              <a  className = "btn" href={'/users/' + user.id+"/albums"}>Albums</a>
               </div>
             </div>))}
         </div>

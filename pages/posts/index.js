@@ -1,21 +1,14 @@
-import Posts from "../../components/Posts";
-import Comments from "../../components/Comments";
-export const getStaticProps = async () => {
-  const result = await fetch('https://jsonplaceholder.typicode.com/posts');
-  const data = await result.json();
+import Posts from "../../components/posts/AllPosts";
+import useFetch from "../../useFetch"
 
-
-
-  return {
-    props: { posts: data }  
-
-  }
-}
-const Post = ({posts}) => {
-  return (
-    <div> <Posts posts={posts}></Posts>
+const Post = () => {
+  const posts = useFetch("https://jsonplaceholder.typicode.com/posts"); 
+   return (
+    <div className="content">
+    <h1>All Posts</h1>
+    <Posts posts={posts.data}></Posts>
     </div>
-   );
+  );
 }
- 
+
 export default Post;
