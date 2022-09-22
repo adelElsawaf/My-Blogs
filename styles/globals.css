@@ -48,9 +48,14 @@ input[type=text] {
   border-radius: 10px;
   font-size: 1vw;
 }
-.home .btn{
-  flex-direction: column;
-  margin: 0px;
+.navigators{
+  display:flex;
+  align-items: center;
+  font-size : 1vw ;
+  font-weight: bold;
+}
+.navigators .btn{
+  margin-left: 15px;
 }
 
 
